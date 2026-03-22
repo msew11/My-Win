@@ -20,10 +20,10 @@
 
 | 📚 类别 (Category) | ✨ 应用 (App) |
 | :--- | :--- |
-| **Package Manager** | **[Scoop](./scoop.md)** |
-| **File Manager** | **[Yazi](./yazi.md)** |
-| **Status Bar** | **[YASB](./yasb.md)** |
-| **Window Manager** | **[GlazeWM](./yasb.md#3-glazewm)** |
+| **Package Manager** | **[Scoop](doc/scoop.md)** |
+| **File Manager** | **[Yazi](doc/yazi.md)** |
+| **Status Bar** | **[YASB](doc/yasb.md)** |
+| **Window Manager** | **[GlazeWM](doc/yasb.md#3-glazewm)** |
 | **Terminal** | Windows Terminal |
 | **System Fetch** | Fastfetch |
 | **Shell Prompt** | Oh My Posh |
