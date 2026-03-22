@@ -14,6 +14,7 @@
 | **System Fetch** | Fastfetch | [config/Fastfetch](./config/Fastfetch) |
 | **Shell Prompt** | Oh My Posh | [PowerShell Profile](./config/Terminal/Microsoft.PowerShell_profile.ps1) |
 | **File Manager** | **Yazi** | **[yazi.md](./yazi.md)** |
+| **Package Manager** | **Scoop** | **[scoop.md](./scoop.md)** |
 
 ---
 
@@ -45,4 +46,5 @@ cd My-Win
 
 - **OS**: Windows 10/11
 - **Shell**: PowerShell 7+
+- **Package Manager**: [Scoop](./scoop.md) (用于安装各类 CLI 依赖)
 - **Font**: 建议安装 [Nerd Fonts](https://www.nerdfonts.com/) (如 JetBrainsMono Nerd Font) 以获得完整的图标支持。
