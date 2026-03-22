@@ -46,14 +46,14 @@ gaps:
   scale_with_dpi: true
 
   # Gap between adjacent windows.
-  inner_gap: '5px'
+  inner_gap: '10px'
 
   # Gap between windows and the screen edge.
   outer_gap:
-    top: '5px'
-    right: '5px'
-    bottom: '5px'
-    left: '5px'
+    top: '10px'
+    right: '10px'
+    bottom: '10px'
+    left: '10px'
 
 window_effects:
   # Visual effects to apply to the focused window.
@@ -72,7 +72,7 @@ window_effects:
     # Change the corner style of the window's frame.
     # ** Exclusive to Windows 11 due to API limitations.
     corner_style:
-      enabled: false
+      enabled: true
       # Allowed values: 'square', 'rounded', 'small_rounded'.
       style: 'rounded'
 
@@ -136,18 +136,60 @@ workspaces:
     keep_alive: true
   - name: '5'
     bind_to_monitor: 0
+    keep_alive: true
   - name: '6'
     bind_to_monitor: 0
+    keep_alive: true
   - name: '7'
     bind_to_monitor: 0
+    keep_alive: true
   - name: '8'
     bind_to_monitor: 0
+    keep_alive: true
   - name: '9'
     bind_to_monitor: 0
+    keep_alive: true
 
 window_rules:
-  - commands: ['toggle-floating']
+  # obs
+  - commands: ['move --workspace 9', 'focus --workspace 9']
     match:
+      - window_process: { equals: 'obs64' }
+  # 浮动窗口
+  - commands: ['move --workspace 8', 'focus --workspace 8']
+    match:
+      - window_process: { equals: 'QQ' }
+      - window_process: { equals: 'Weixin' }
+      - window_process: { equals: 'QQMusic' }
+      - window_process: { equals: 'clash-verge' }
+  # 视频    
+  - commands: ['move --workspace 4', 'focus --workspace 4']
+    match:
+      - window_process: { equals: 'mpv' }
+  # Code
+  - commands: ['move --workspace 3', 'focus --workspace 3']
+    match:
+      - window_process: { equals: 'Code' }
+  # Web
+  - commands: ['move --workspace 2', 'focus --workspace 2']
+    match:
+      - window_process: { equals: 'chrome' }
+  # Terminal + File Manager
+  - commands: ['move --workspace 1', 'focus --workspace 1']
+    match:
+      - window_process: { equals: 'explorer' }
+      - window_process: { equals: 'WindowsTerminal' }
+  # 浮动窗口
+  - commands: ['set-floating']
+    match:
+      - window_process: { equals: 'clash-verge' }
+      - window_process: { equals: 'obs64' }
+        window_title: { equals: '设置' }
+      - window_process: { equals: 'Taskmgr' }
+      - window_process: { equals: 'geek64' }
+      - window_process: { equals: 'QQ' }
+      - window_process: { equals: 'Weixin' }
+  # 忽略(对一些特殊窗口进行忽略)
   - commands: ['ignore']
     match:
       # Ignores any Zebar windows.
@@ -158,12 +200,12 @@ window_rules:
         window_class: { regex: 'Chrome_WidgetWin_1|MozillaDialogClass' }
 
       # Ignore rules for various 3rd-party apps.
-      - window_process: { equals: 'PowerToys' }
-        window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
-      - window_title: { equals: 'Command Palette' }
-        window_class: { equals: 'WinUIDesktopWin32WindowClass' }
-      - window_process: { equals: 'PowerToys' }
-        window_title: { regex: '.*? - Peek' }
+      # - window_process: { equals: 'PowerToys' }
+      #   window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
+      # - window_title: { equals: 'Command Palette' }
+      #   window_class: { equals: 'WinUIDesktopWin32WindowClass' }
+      # - window_process: { equals: 'PowerToys' }
+      #   window_title: { regex: '.*? - Peek' }
       - window_process: { equals: 'Lively' }
         window_class: { regex: 'HwndWrapper' }
       - window_process: { equals: 'EXCEL' }
@@ -174,18 +216,14 @@ window_rules:
         window_class: { not_regex: 'PPTFrameClass' }
 
       # Ignore my apps.
-      - window_process: { equals: 'PowerToys' }
-        window_title: { regex: '.*' }
       - window_process: { equals: 'PixPin' }
-      - window_process: { equals: 'QQMusic' }
       - window_process: { equals: 'HRConfig' }
       - window_process: { equals: 'HipsMain' }
       - window_process: { equals: 'PopBlock' }
       - window_process: { equals: 'ExplorerTabUtility' }
-      - window_process: { equals: 'QQ' }
-      - window_process: { equals: 'Weixin' }
       - window_process: { equals: 'jetbrains-toolbox' }
-      - window_process: { equals: 'Taskmgr' }
+      - window_process: { equals: 'AutoHotkeyUX' }
+      - window_process: { equals: 'QQMusic' }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
@@ -206,23 +244,23 @@ binding_modes:
 keybindings:
   # Shift focus in a given direction.
   - commands: ['focus --direction left']
-    bindings: ['alt+h', 'alt+left']
+    bindings: ['alt+h']
   - commands: ['focus --direction right']
-    bindings: ['alt+l', 'alt+right']
+    bindings: ['alt+l']
   - commands: ['focus --direction up']
-    bindings: ['alt+k', 'alt+up']
+    bindings: ['alt+k']
   - commands: ['focus --direction down']
-    bindings: ['alt+j', 'alt+down']
+    bindings: ['alt+j']
 
   # Move focused window in a given direction.
   - commands: ['move --direction left']
-    bindings: ['alt+shift+h', 'alt+shift+left']
+    bindings: ['alt+shift+h']
   - commands: ['move --direction right']
-    bindings: ['alt+shift+l', 'alt+shift+right']
+    bindings: ['alt+shift+l']
   - commands: ['move --direction up']
-    bindings: ['alt+shift+k', 'alt+shift+up']
+    bindings: ['alt+shift+k']
   - commands: ['move --direction down']
-    bindings: ['alt+shift+j', 'alt+shift+down']
+    bindings: ['alt+shift+j']
 
   # Resize focused window by a percentage or pixel amount.
   - commands: ['resize --width -2%']
@@ -263,7 +301,7 @@ keybindings:
     bindings: ['alt+t']
 
   # Change the focused window to be fullscreen.
-  - commands: ['set-fullscreen']
+  - commands: ['toggle-fullscreen']
     bindings: ['alt+f']
 
   # Minimize focused window.
@@ -272,7 +310,7 @@ keybindings:
 
   # Close focused window.
   - commands: ['close']
-    bindings: ['alt+w']
+    bindings: ['alt+escape']
 
   # Kill GlazeWM process safely.
   - commands: ['wm-exit']
@@ -290,7 +328,7 @@ keybindings:
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
   - commands: ['shell-exec wt']
-    bindings: ['alt+enter']
+    bindings: ['f2']
 
   # Focus the next/previous active workspace defined in `workspaces` config.
   - commands: ['focus --next-active-workspace']
