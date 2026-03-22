@@ -18,5 +18,10 @@ use = "Lil-Dank/lazygit"
 rev = "8c4086c"
 hash = "85316b5e9abeae2531d3e5d02a094381"
 
+[[plugin.deps]]
+use = "llanosrocas/githead"
+rev = "317d09f"
+hash = "41dc37a724b2afd21da4f1ea6c1182d8"
+
 [flavor]
 deps = []
