@@ -18,15 +18,15 @@
 
 ## 📑 目录 (Table of Contents)
 
-| 📚 类别 (Category) | ✨ 应用 (App) | 🔗 配置链接 (Config Link) |
-| :--- | :--- | :--- |
-| **Package Manager** | **Scoop** | **[scoop.md](./scoop.md)** |
-| **File Manager** | **Yazi** | **[yazi.md](./yazi.md)** |
-| **Status Bar** | YASB | (尚未完成) |
-| **Window Manager** | GlazeWM | (尚未完成) |
-| **Terminal** | Windows Terminal | (尚未完成) |
-| **System Fetch** | Fastfetch | (尚未完成) |
-| **Shell Prompt** | Oh My Posh | (尚未完成) |
+| 📚 类别 (Category) | ✨ 应用 (App) |
+| :--- | :--- |
+| **Package Manager** | **[Scoop](./scoop.md)** |
+| **File Manager** | **[Yazi](./yazi.md)** |
+| **Status Bar** | **[YASB](./yasb.md)** |
+| **Window Manager** | **[GlazeWM](./yasb.md#4-glazewm-窗口规则定制)** |
+| **Terminal** | Windows Terminal |
+| **System Fetch** | Fastfetch |
+| **Shell Prompt** | Oh My Posh |
 
 ---
 
