@@ -2,6 +2,18 @@
 
 基于 Windows 的个人工作流配置集合，涵盖了平铺窗口管理、终端增强及美化。
 
+## 🖼️ 预览 (Preview)
+
+![Preview](preview/6d33e733-7f4e-4c3a-a4d6-26142fa91bb4.png)
+
+---
+
+## 🛠️ 环境要求
+
+- **OS**: Windows 11
+- **Package Manager**: [Scoop](./scoop.md) (用于安装各类 CLI 依赖)
+- **Font**: 建议安装 [Nerd Fonts](https://www.nerdfonts.com/) (如 JetBrainsMono Nerd Font) 以获得完整的图标支持。
+
 ---
 
 ## 📑 目录 (Table of Contents)
@@ -10,11 +22,11 @@
 | :--- | :--- | :--- |
 | **Package Manager** | **Scoop** | **[scoop.md](./scoop.md)** |
 | **File Manager** | **Yazi** | **[yazi.md](./yazi.md)** |
-| **Status Bar** | YASB | [config/YASB](./config/YASB) |
-| **Window Manager** | GlazeWM | [config/GlazeWM](./config/GlazeWM) |
-| **Terminal** | Windows Terminal | [config/Terminal](./config/Terminal) |
-| **System Fetch** | Fastfetch | [config/Fastfetch](./config/Fastfetch) |
-| **Shell Prompt** | Oh My Posh | [PowerShell Profile](./config/Terminal/Microsoft.PowerShell_profile.ps1) |
+| **Status Bar** | YASB | (尚未完成) |
+| **Window Manager** | GlazeWM | (尚未完成) |
+| **Terminal** | Windows Terminal | (尚未完成) |
+| **System Fetch** | Fastfetch | (尚未完成) |
+| **Shell Prompt** | Oh My Posh | (尚未完成) |
 
 ---
 
@@ -27,24 +39,24 @@ cd My-Win
 ```
 
 ### 2. 设置符号链接 (Symbolic Links)
-项目中包含 `setup_links.ps1` 脚本，用于将配置文件链接到系统对应的配置目录：
-```powershell
-./setup_links.ps1
-```
+项目中包含 `setup_links.ps1` 脚本，用于将配置文件链接到系统对应的配置目录。
 
-### 3. 组件说明
+#### `setup_links.ps1` 使用方法：
 
-#### 📂 文件管理器 (Yazi)
-关于 Yazi 的详细安装步骤、插件说明及快捷键配置，请参阅：**[Yazi 配置指南](./yazi.md)**。
+1. **权限准备**：
+   - 脚本创建软链接需要 **管理员权限**。请以管理员身份运行 PowerShell。
+   - 或者在 Windows 设置中开启 **开发人员模式**。
 
-#### 🐚 终端与 Shell
-使用 Windows Terminal 配合 PowerShell 7，通过 Oh My Posh 提供主题增强。
+2. **运行脚本**：
+   ```powershell
+   ./setup_links.ps1
+   ```
+
+3. **交互操作**：
+   - 脚本会自动检测当前配置的链接状态：
+     - **已链接**：配置已就绪。
+     - **未链接**：尚未建立软链接。
+     - **存在同名文件夹**：目标位置已有配置，脚本会提示进行备份（后缀加 `_back`）。
+   - 根据提示输入应用对应的 **编号** 即可完成自动链接。
 
 ---
-
-## 🛠️ 环境要求
-
-- **OS**: Windows 10/11
-- **Shell**: PowerShell 7+
-- **Package Manager**: [Scoop](./scoop.md) (用于安装各类 CLI 依赖)
-- **Font**: 建议安装 [Nerd Fonts](https://www.nerdfonts.com/) (如 JetBrainsMono Nerd Font) 以获得完整的图标支持。
