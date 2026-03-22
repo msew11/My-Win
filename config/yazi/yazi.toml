@@ -2,6 +2,16 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
+[opener]
+mpv-play = [
+	{ run = 'mpv %s1', desc = "Play", for = "windows", orphan = true },
+]
+
+[open]
+rules = [
+    { mime = "{audio,video}/*", use = [ "mpv-play", "play", "reveal" ] },
+]
+
 [[plugin.prepend_fetchers]]
 id  = "git"
 url = "*"

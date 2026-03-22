@@ -8,13 +8,13 @@
 
 | 📚 类别 (Category) | ✨ 应用 (App) | 🔗 配置链接 (Config Link) |
 | :--- | :--- | :--- |
+| **Package Manager** | **Scoop** | **[scoop.md](./scoop.md)** |
+| **File Manager** | **Yazi** | **[yazi.md](./yazi.md)** |
 | **Status Bar** | YASB | [config/YASB](./config/YASB) |
 | **Window Manager** | GlazeWM | [config/GlazeWM](./config/GlazeWM) |
 | **Terminal** | Windows Terminal | [config/Terminal](./config/Terminal) |
 | **System Fetch** | Fastfetch | [config/Fastfetch](./config/Fastfetch) |
 | **Shell Prompt** | Oh My Posh | [PowerShell Profile](./config/Terminal/Microsoft.PowerShell_profile.ps1) |
-| **File Manager** | **Yazi** | **[yazi.md](./yazi.md)** |
-| **Package Manager** | **Scoop** | **[scoop.md](./scoop.md)** |
 
 ---
 
