@@ -17,7 +17,10 @@ if (-not $isAdmin) {
 $mappings = @(
     @{ Name = "Yazi"; Source = "config\_yazi"; Destination = "$env:APPDATA\yazi\config" }
     @{ Name = "GlazeWM"; Source = "config\_glazewm"; Destination = "$env:USERPROFILE\.glzr\glazewm" }
+    @{ Name = "Yasb"; Source = "config\_yasb"; Destination = "$env:USERPROFILE\.config\yasb"; ProcessToKill = "yasb" }
 )
+
+# --- 省略中间函数 ---
 
 function Get-LinkStatus {
     param($src, $dest)
@@ -95,6 +98,32 @@ $src = (Get-Item $srcPath).FullName
 $dest = [System.Environment]::ExpandEnvironmentVariables($map.Destination)
 
 Write-Host "`n--- 正在处理: $($map.Name) ---" -ForegroundColor Cyan
+
+# 0. 结束相关进程
+if ($map.ProcessToKill) {
+    $processes = Get-Process -Name $map.ProcessToKill -ErrorAction SilentlyContinue
+    if ($processes) {
+        Write-Host "正在结束进程: $($map.ProcessToKill)..." -ForegroundColor Yellow
+        $processes | Stop-Process -Force
+        
+        # 等待进程完全退出（带超时监控）
+        $timeoutSeconds = 10
+        $elapsed = 0
+        while ($elapsed -lt $timeoutSeconds) {
+            if (-not (Get-Process -Name $map.ProcessToKill -ErrorAction SilentlyContinue)) {
+                break
+            }
+            Start-Sleep -Seconds 1
+            $elapsed++
+        }
+
+        if (Get-Process -Name $map.ProcessToKill -ErrorAction SilentlyContinue) {
+            Write-Host "错误: 无法在 $($timeoutSeconds) 秒内结束进程 '$($map.ProcessToKill)'，操作已取消。" -ForegroundColor Red
+            exit
+        }
+        Write-Host "进程已结束。" -ForegroundColor Gray
+    }
+}
 
 # 1. 处理冲突或旧链接
 if (Test-Path $dest) {
