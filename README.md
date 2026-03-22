@@ -4,7 +4,7 @@
 
 ## 🖼️ 预览 (Preview)
 
-![Preview](preview/6d33e733-7f4e-4c3a-a4d6-26142fa91bb4.png)
+![Preview](preview/preview01.png)
 
 ---
 
@@ -51,6 +51,7 @@ cd My-Win
    ```powershell
    ./setup_links.ps1
    ```
+   ![Script Preview](preview/script01.png)
 
 3. **交互操作**：
    - 脚本会自动检测当前配置的链接状态：
