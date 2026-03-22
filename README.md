@@ -4,7 +4,7 @@
 
 ## 🖼️ 预览 (Preview)
 
-![Preview](preview/preview01.png)
+![Preview](pic/preview01.png)
 
 ---
 
@@ -23,7 +23,7 @@
 | **Package Manager** | **[Scoop](./scoop.md)** |
 | **File Manager** | **[Yazi](./yazi.md)** |
 | **Status Bar** | **[YASB](./yasb.md)** |
-| **Window Manager** | **[GlazeWM](./yasb.md#4-glazewm-窗口规则定制)** |
+| **Window Manager** | **[GlazeWM](./yasb.md#3-glazewm)** |
 | **Terminal** | Windows Terminal |
 | **System Fetch** | Fastfetch |
 | **Shell Prompt** | Oh My Posh |
@@ -51,7 +51,7 @@ cd My-Win
    ```powershell
    ./setup_links.ps1
    ```
-   ![Script Preview](preview/script01.png)
+   ![Script Preview](pic/script01.png)
 
 3. **交互操作**：
    - 脚本会自动检测当前配置的链接状态：

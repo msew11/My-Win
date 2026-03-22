@@ -46,7 +46,7 @@ scoop install extras/glazewm
 scoop install autohotkey
 ```
 
-![AutoHotkey Windows Spy](preview/autohotkey.png)
+![AutoHotkey Windows Spy](../pic/autohotkey.png)
 
 ---
 
