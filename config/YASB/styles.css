@@ -16,7 +16,7 @@ For more information about configuration options, please visit the Wiki https://
     --bg-color2: #333333;
 }
 * {
-    font-size: 12px;
+    font-size: 15px;
     color: var(--text1);
     font-weight: 600;
     font-family: "JetBrainsMono NFP";
@@ -588,4 +588,69 @@ For more information about configuration options, please visit the Wiki https://
 
 .glazewm-binding-mode .icon.pause {
     color: var(--red);
+}
+
+/* Disk */
+.disk-widget {
+    padding: 0 6px 0 6px;
+}
+.disk-group {
+    background-color:rgba(17, 17, 27, 0.4); 
+}
+.disk-group-row {
+    min-width: 220px;
+    max-width: 220px;
+    max-height: 40px;
+    margin: 0;
+    padding: 0;
+    border-radius: 6px;
+    border: 1px solid rgba(128, 128, 128, 0);
+}
+.disk-group-row:hover {
+    background-color:rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.disk-group-label-bar{
+    max-height:8px;
+    border:0px solid rgba(128, 128, 128, 0);
+    background-color: rgba(137, 180, 250, 0.1);
+    border-radius: 4px;
+}
+.disk-group-label-bar::chunk{
+    background-color: rgba(61, 135, 255, 0.3);
+    border-radius: 4px;
+}
+.disk-group-label {
+    font-size: 10px;
+}
+.disk-group-label-size {
+    font-size: 10px;
+    color: #666879;
+}
+
+/* 图标 */
+.systray {
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+.systray .button {
+    border-radius: 4px;
+    padding: 2px 2px;
+    background-color: transparent;
+}
+.systray .button:hover,
+.systray .unpinned-visibility-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+.systray .unpinned-visibility-btn {
+    height: 20px;
+    width: 16px;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+}
+.systray .unpinned-visibility-btn:hover {
+    border-radius: 4px;
 }
