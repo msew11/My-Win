@@ -15,11 +15,8 @@ if (-not $isAdmin) {
 
 # 定义映射列表
 $mappings = @(
-    @{
-        Name        = "Yazi"
-        Source      = "config\yazi"
-        Destination = "$env:APPDATA\yazi\config"
-    }
+    @{ Name = "Yazi"; Source = "config\_yazi"; Destination = "$env:APPDATA\yazi\config" }
+    @{ Name = "GlazeWM"; Source = "config\_glazewm"; Destination = "$env:USERPROFILE\.glzr\glazewm" }
 )
 
 function Get-LinkStatus {
