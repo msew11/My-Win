@@ -24,9 +24,9 @@
 | **File Manager** | **[Yazi](doc/yazi.md)** |
 | **Status Bar** | **[YASB](doc/yasb.md)** |
 | **Window Manager** | **[GlazeWM](doc/yasb.md#3-glazewm)** |
-| **Terminal** | Windows Terminal |
-| **System Fetch** | Fastfetch |
-| **Shell Prompt** | Oh My Posh |
+| **Terminal** | **[Windows Terminal](doc/powershell.md#1-安装-powershell-7)** |
+| **System Fetch** | **[Fastfetch](doc/powershell.md#2-安装-fastfetch)** |
+| **Shell Prompt** | **[Oh My Posh](doc/powershell.md#3-安装-oh-my-posh)** |
 
 ---
 

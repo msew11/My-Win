@@ -18,6 +18,8 @@ $mappings = @(
     @{ Name = "Yazi"; Source = "config\_yazi"; Destination = "$env:APPDATA\yazi\config" }
     @{ Name = "GlazeWM"; Source = "config\_glazewm"; Destination = "$env:USERPROFILE\.glzr\glazewm" }
     @{ Name = "Yasb"; Source = "config\_yasb"; Destination = "$env:USERPROFILE\.config\yasb"; ProcessToKill = "yasb" }
+    @{ Name = "Fastfetch"; Source = "config\_fastfetch"; Destination = "$env:USERPROFILE\.config\fastfetch" }
+    @{ Name = "PowerShell7"; Source = "config\_powershell7\Microsoft.PowerShell_profile.ps1"; Destination = "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" }
 )
 
 # --- 省略中间函数 ---
@@ -68,7 +70,7 @@ for ($i = 0; $i -lt $mappings.Count; $i++) {
             $availableOptions += $displayIndex
         }
         "Conflict" {
-            Write-Host "存在同名文件夹 (待备份并链接)" -ForegroundColor Magenta
+            Write-Host "存在同名冲突 (待备份并链接)" -ForegroundColor Magenta
             $availableOptions += $displayIndex
         }
         "Missing" {
@@ -132,9 +134,12 @@ if (Test-Path $dest) {
         Write-Host "正在移除旧的错误链接..." -ForegroundColor Yellow
         Remove-Item $dest -Force
     } else {
-        $backup = $dest + "_back"
+        # 针对文件使用 .bak 后缀，针对目录使用 _back 后缀
+        $suffix = if ($item.PSIsContainer) { "_back" } else { ".bak" }
+        $backup = $dest + $suffix
+        
         if (Test-Path $backup) { Remove-Item $backup -Recurse -Force }
-        Write-Host "发现同名目录，正在备份到: $backup" -ForegroundColor Yellow
+        Write-Host "发现同名冲突，正在备份到: $backup" -ForegroundColor Yellow
         Move-Item $dest $backup
     }
 }
