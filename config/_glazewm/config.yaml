@@ -132,7 +132,7 @@ workspaces:
     bind_to_monitor: 0
     keep_alive: true
   - name: '4'
-    bind_to_monitor: 1
+    bind_to_monitor: 0
     keep_alive: true
   - name: '5'
     bind_to_monitor: 1
@@ -151,38 +151,47 @@ workspaces:
     keep_alive: true
 
 window_rules:
-  # obs
-  - commands: ['move --workspace 9', 'focus --workspace 9']
-    match:
-      - window_process: { equals: 'obs64' }
-  # 浮动窗口
-  - commands: ['move --workspace 8', 'focus --workspace 8']
-    match:
-      - window_process: { equals: 'QQ' }
-      - window_process: { equals: 'Weixin' }
-      - window_process: { equals: 'QQMusic' }
-      - window_process: { equals: 'qbittorrent' }
-      - window_process: { equals: 'clash-verge' }
-  # 视频    
-  - commands: ['move --workspace 4', 'focus --workspace 4']
-    match:
-      - window_process: { equals: 'mpv' }
-  # Code
-  - commands: ['move --workspace 3', 'focus --workspace 3']
-    match:
-      - window_process: { equals: 'Code' }
-      - window_process: { equals: 'chrome' }
-  # Web
-  - commands: ['move --workspace 2', 'focus --workspace 2']
-    match:
-      - window_process: { equals: 'idea64' }
+  # 主屏 ============================================================
   # Terminal + File Manager
   - commands: ['move --workspace 1', 'focus --workspace 1']
     match:
       - window_process: { equals: 'explorer' }
       - window_process: { equals: 'WindowsTerminal' }
-  # 浮动窗口
-  - commands: ['set-floating']
+  # Web
+  - commands: ['move --workspace 2', 'focus --workspace 2']
+    match:
+      - window_process: { equals: 'idea64' }
+      - window_process: { equals: 'rider64' }
+      - window_process: { equals: 'webstorm64' }
+  # Code
+  - commands: ['move --workspace 3', 'focus --workspace 3']
+    match:
+      - window_process: { equals: 'Code' }
+      - window_process: { equals: 'chrome' }
+  # 视频    
+  - commands: ['move --workspace 4', 'focus --workspace 4']
+    match:
+      - window_process: { equals: 'mpv' }
+  # 副屏 ============================================================
+  - commands: ['move --workspace 7', 'focus --workspace 7']
+    match:
+      - window_process: { equals: 'EXCEL' }
+  # 浮动窗口(Chat)
+  - commands: ['move --workspace 8', 'focus --workspace 8']
+    match:
+      - window_process: { equals: 'QQ' }
+      - window_process: { equals: 'Weixin' }
+      - window_process: { equals: 'WXWork' }
+      - window_process: { equals: 'QQMusic' }
+      - window_process: { equals: 'Feishu' }
+      - window_process: { equals: 'qbittorrent' }
+      - window_process: { equals: 'clash-verge' }
+  # obs
+  - commands: ['move --workspace 9', 'focus --workspace 9']
+    match:
+      - window_process: { equals: 'obs64' }
+  # 浮动 ============================================================
+  - commands: ['set-floating --centered']
     match:
       - window_process: { equals: 'clash-verge' }
       - window_process: { equals: 'obs64' }
@@ -191,8 +200,11 @@ window_rules:
       - window_process: { equals: 'geek64' }
       - window_process: { equals: 'QQ' }
       - window_process: { equals: 'Weixin' }
+      - window_process: { equals: 'WXWork' }
+      - window_process: { equals: 'Feishu' }
       - window_process: { equals: 'qbittorrent' }
-  # 忽略(对一些特殊窗口进行忽略)
+      - window_process: { equals: 'EXCEL' }
+  # 忽略(对一些特殊窗口进行忽略) ======================================
   - commands: ['ignore']
     match:
       # Ignores any Zebar windows.
@@ -211,8 +223,8 @@ window_rules:
       #   window_title: { regex: '.*? - Peek' }
       - window_process: { equals: 'Lively' }
         window_class: { regex: 'HwndWrapper' }
-      - window_process: { equals: 'EXCEL' }
-        window_class: { not_regex: 'XLMAIN' }
+      # - window_process: { equals: 'EXCEL' }
+      #   window_class: { not_regex: 'XLMAIN' }
       - window_process: { equals: 'WINWORD' }
         window_class: { not_regex: 'OpusApp' }
       - window_process: { equals: 'POWERPNT' }
