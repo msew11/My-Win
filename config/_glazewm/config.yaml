@@ -204,6 +204,8 @@ window_rules:
       - window_process: { equals: 'Feishu' }
       - window_process: { equals: 'qbittorrent' }
       - window_process: { equals: 'EXCEL' }
+      - window_process: { regex: 'idea64|webstorm64|rider64' }
+        window_class: { equals: 'SunAwtDialog' }
   # 忽略(对一些特殊窗口进行忽略) ======================================
   - commands: ['ignore']
     match:
