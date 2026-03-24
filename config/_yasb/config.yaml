@@ -242,6 +242,8 @@ widgets:
       bar_type: "bars"
       framerate: 60
       hide_empty: true
+      callbacks:
+        on_left: 'reload_cava'
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
