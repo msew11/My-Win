@@ -22,7 +22,7 @@ general:
 
   cursor_jump:
     # Whether to automatically move the cursor on the specified trigger.
-    enabled: true
+    enabled: false
 
     # Trigger for cursor jump:
     # - 'monitor_focus': Jump when focus changes between monitors.
@@ -176,6 +176,7 @@ window_rules:
   - commands: ['move --workspace 7', 'focus --workspace 7']
     match:
       - window_process: { equals: 'EXCEL' }
+      - window_process: { equals: 'TortoiseProc' }
   # 浮动窗口(Chat)
   - commands: ['move --workspace 8', 'focus --workspace 8']
     match:
@@ -241,6 +242,7 @@ window_rules:
       - window_process: { equals: 'jetbrains-toolbox' }
       - window_process: { equals: 'AutoHotkeyUX' }
       - window_process: { equals: 'QQMusic' }
+      - window_process: { equals: 'Unity' }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
@@ -345,7 +347,7 @@ keybindings:
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
   - commands: ['shell-exec wt']
-    bindings: ['f2']
+    bindings: ['f3']
 
   # Focus the next/previous active workspace defined in `workspaces` config.
   - commands: ['focus --next-active-workspace']
