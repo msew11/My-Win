@@ -209,6 +209,8 @@ window_rules:
         window_class: { equals: 'SunAwtDialog' }
       - window_process: { equals: 'chrome' }
         window_title: { equals: '打开' }
+      - window_process: { equals: 'yasb_themes' }
+        window_title: { equals: 'Install Theme' }
   # 忽略(对一些特殊窗口进行忽略) ======================================
   - commands: ['ignore']
     match:
