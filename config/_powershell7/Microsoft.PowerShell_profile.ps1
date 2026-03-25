@@ -13,3 +13,5 @@ function y {
 	}
 	Remove-Item -Path $tmp
 }
+
+Set-Alias ll "dir"
