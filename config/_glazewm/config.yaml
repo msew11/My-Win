@@ -151,62 +151,7 @@ workspaces:
     keep_alive: true
 
 window_rules:
-  # 主屏 ============================================================
-  # Terminal + File Manager
-  - commands: ['move --workspace 1', 'focus --workspace 1']
-    match:
-      - window_process: { equals: 'explorer' }
-      - window_process: { equals: 'WindowsTerminal' }
-  # Web
-  - commands: ['move --workspace 2', 'focus --workspace 2']
-    match:
-      - window_process: { equals: 'idea64' }
-      - window_process: { equals: 'rider64' }
-      - window_process: { equals: 'webstorm64' }
-  # Code
-  - commands: ['move --workspace 3', 'focus --workspace 3']
-    match:
-      - window_process: { equals: 'Code' }
-      - window_process: { equals: 'chrome' }
-  # 视频    
-  - commands: ['move --workspace 4', 'focus --workspace 4']
-    match:
-      - window_process: { equals: 'mpv' }
-  # 副屏 ============================================================
-  - commands: ['move --workspace 7', 'focus --workspace 7']
-    match:
-      - window_process: { equals: 'EXCEL' }
-      - window_process: { equals: 'TortoiseProc' }
-  # 浮动窗口(Chat)
-  - commands: ['move --workspace 8', 'focus --workspace 8']
-    match:
-      - window_process: { equals: 'QQ' }
-      - window_process: { equals: 'Weixin' }
-      - window_process: { equals: 'WXWork' }
-      - window_process: { equals: 'QQMusic' }
-      - window_process: { equals: 'Feishu' }
-      - window_process: { equals: 'qbittorrent' }
-      - window_process: { equals: 'clash-verge' }
-  # obs
-  - commands: ['move --workspace 9', 'focus --workspace 9']
-    match:
-      - window_process: { equals: 'obs64' }
-  # 浮动 ============================================================
-  - commands: ['set-floating --centered']
-    match:
-      - window_process: { equals: 'clash-verge' }
-      - window_process: { equals: 'obs64' }
-        window_title: { equals: '设置' }
-      - window_process: { equals: 'Taskmgr' }
-      - window_process: { equals: 'geek64' }
-      - window_process: { equals: 'QQ' }
-      - window_process: { equals: 'Weixin' }
-      - window_process: { equals: 'WXWork' }
-      - window_process: { equals: 'Feishu' }
-      - window_process: { equals: 'qbittorrent' }
-      - window_process: { equals: 'EXCEL' }
-      - window_process: { regex: 'idea64|webstorm64|rider64' }
-        window_class: { equals: 'SunAwtDialog' }
+
   # 忽略(对一些特殊窗口进行忽略) ======================================
   - commands: ['ignore']
     match:
@@ -243,6 +188,63 @@ window_rules:
       - window_process: { equals: 'AutoHotkeyUX' }
       - window_process: { equals: 'QQMusic' }
       - window_process: { equals: 'Unity' }
+      - window_process: { equals: 'Feishu' }
+        window_title: { not_regex: '飞书' }
+
+  # 主屏 ============================================================
+  # Terminal + File Manager
+  - commands: ['move --workspace 1', 'focus --workspace 1']
+    match:
+      - window_process: { equals: 'explorer' }
+      - window_process: { equals: 'WindowsTerminal' }
+  # Web
+  - commands: ['move --workspace 2', 'focus --workspace 2']
+    match:
+      - window_process: { equals: 'idea64' }
+      - window_process: { equals: 'rider64' }
+      - window_process: { equals: 'webstorm64' }
+  # Code
+  - commands: ['move --workspace 3', 'focus --workspace 3']
+    match:
+      - window_process: { equals: 'Code' }
+      - window_process: { equals: 'chrome' }
+  # 视频    
+  - commands: ['move --workspace 4', 'focus --workspace 4']
+    match:
+      - window_process: { equals: 'mpv' }
+  # 副屏 ============================================================
+  - commands: ['move --workspace 7', 'focus --workspace 7']
+    match:
+      - window_process: { equals: 'EXCEL' }
+      - window_process: { equals: 'TortoiseProc' }
+  # 浮动窗口(Chat)
+  - commands: ['set-floating --centered', 'move --workspace 8', 'focus --workspace 8']
+    match:
+      - window_process: { equals: 'QQ' }
+      - window_process: { equals: 'Weixin' }
+      - window_process: { equals: 'WXWork' }
+      - window_process: { equals: 'QQMusic' }
+      - window_process: { equals: 'Feishu' }
+      - window_process: { equals: 'qbittorrent' }
+      - window_process: { equals: 'clash-verge' }
+      
+  # 浮动 ============================================================
+  - commands: ['set-floating --centered']
+    match:
+      - window_process: { equals: 'obs64' }
+        window_title: { equals: '设置' }
+      - window_process: { equals: 'Taskmgr' }
+      - window_process: { equals: 'geek64' }
+      - window_process: { equals: 'EXCEL' }
+      - window_process: { regex: 'idea64|webstorm64|rider64' }
+        window_class: { equals: 'SunAwtDialog' }
+      - window_process: { regex: 'idea64|webstorm64|rider64' }
+        window_class: { equals: 'SunAwtFrame' }
+        window_title: { regex: 'Repository Diff|Commit:|\w+.\w+ - \w+.\w+' }
+  # obs
+  - commands: ['move --workspace 9', 'focus --workspace 9']
+    match:
+      - window_process: { equals: 'obs64' }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
