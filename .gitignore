@@ -1,3 +1,5 @@
 # 屏蔽 config 目录及其子目录下的所有日志文件
 config/**/*.log
 /.idea/
+/config/_yasb/config.yaml.backup
+/config/_yasb/styles.css.backup
