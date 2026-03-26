@@ -3,7 +3,9 @@ general:
   # script or launching another application.
   # Example: The below command launches Zebar.
   # startup_commands: ['shell-exec zebar']
-  startup_commands: []
+  startup_commands: [
+    # 'shell-exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File $env:USERPROFILE\.glzr\glazewm\exclusive_ide.ps1'
+  ]
 
   # Commands to run just before the WM is shutdown.
   # Example: The below command kills Zebar.
@@ -135,7 +137,7 @@ workspaces:
     bind_to_monitor: 0
     keep_alive: true
   - name: '5'
-    bind_to_monitor: 1
+    bind_to_monitor: 0
     keep_alive: true
   - name: '6'
     bind_to_monitor: 1
@@ -157,30 +159,33 @@ window_rules:
     match:
       - window_process: { equals: 'explorer' }
       - window_process: { equals: 'WindowsTerminal' }
-  # 视频
+  # Code 1
   - commands: ['move --workspace 2', 'focus --workspace 2']
     match:
-      - window_process: { equals: 'mpv' }
-  # Code 1
+      - window_process: { equals: 'idea64' }
+  # Code 2
   - commands: ['move --workspace 3', 'focus --workspace 3']
     match:
-      - window_process: { equals: 'Code' }
-  # Code 2
-  - commands: ['move --workspace 4', 'focus --workspace 4']
-    match:
-      - window_process: { equals: 'idea64' }
       - window_process: { equals: 'rider64' }
       - window_process: { equals: 'webstorm64' }
-  # 副屏 ============================================================
+  # Code 3
+  - commands: ['move --workspace 4', 'focus --workspace 4']
+    match:
+      - window_process: { equals: 'Code' }
+  # 视频
   - commands: ['move --workspace 5', 'focus --workspace 5']
     match:
-      - window_process: { equals: 'chrome' }
+      - window_process: { equals: 'mpv' }
+  # 副屏 ============================================================
   - commands: ['move --workspace 6', 'focus --workspace 6']
+    match:
+      - window_process: { equals: 'chrome' }
+  - commands: ['move --workspace 7', 'focus --workspace 7']
     match:
       - window_process: { equals: 'EXCEL' }
       - window_process: { equals: 'TortoiseProc' }
   # 浮动窗口(Chat)
-  - commands: ['move --workspace 7', 'focus --workspace 7']
+  - commands: ['move --workspace 8', 'focus --workspace 8']
     match:
       - window_process: { equals: 'QQ' }
       - window_process: { equals: 'Weixin' }
@@ -218,6 +223,7 @@ window_rules:
         window_title: { equals: 'Install Theme' }
       - window_process: { equals: 'yasb' }
         window_class: { equals: 'Qt6102QWindowIcon' }
+      - window_process: { equals: 'prettyZoo' }
   # 忽略(对一些特殊窗口进行忽略) ======================================
   - commands: ['ignore']
     match:
