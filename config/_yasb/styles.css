@@ -740,3 +740,9 @@ For more information about configuration options, please visit the Wiki https://
     background-color: rgb(226, 0, 0);
 }
 /* #endregion */
+
+.cpu-widget .widget-container .label {
+    display: inline-block;
+    min-width: 50px; 
+    text-align: right;
+}

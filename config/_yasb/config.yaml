@@ -54,8 +54,8 @@ bars:
       # - "systray"
       right:
       - "systray"
-      - "media"
       - "cava"
+      - "media"
       # - "weather"
       # - "microphone"
       - "cpu"
@@ -176,9 +176,9 @@ widgets:
     type: "yasb.systray.SystrayWidget"
     options:
       class_name: "systray"
-      label_collapsed: "▼"
+      label_collapsed: "◀︎"
       label_expanded: "▶"
-      label_position: "left" # Can be "left" or "right"
+      label_position: "right" # Can be "left" or "right"
       icon_size: 16 # Can be any integer between 8 and 64
       pin_click_modifier: "alt" # Can be "ctrl", "alt" or "shift"
       show_unpinned: true
@@ -216,7 +216,7 @@ widgets:
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
-      label: "<span>\uf4bc</span> {info[percent][total]}%"
+      label: "<span>\uf4bc</span> {info[percent][total]:.1f}%"
       label_alt: "<span>\uf437</span> {info[freq][current]} MHz"
       update_interval: 2000
       cpu_thresholds:
