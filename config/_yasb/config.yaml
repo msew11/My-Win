@@ -2,8 +2,8 @@
 
 # This is default and very simple configuration file for Yasb. 
 # For more information about configuration options, please visit the Wiki https://github.com/amnweb/yasb/wiki
-watch_stylesheet: true
-watch_config: true
+watch_stylesheet: false
+watch_config: false
 debug: false
 update_check: true # Enable automatic update check.
 glazewm:
@@ -36,9 +36,9 @@ bars:
       height: 45
     padding:
       top: 4
-      left: 4
+      left: 20
       bottom: 0
-      right: 4
+      right: 20
     widgets:
       left:
       - "power_menu"
@@ -186,6 +186,11 @@ widgets:
       show_battery: false
       show_volume: false
       show_network: false
+      btn_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
       hide_icons:
         - "yasb"
         - "glazewm"
@@ -201,11 +206,11 @@ widgets:
         - "openvpn-gui"
         - "jetbrains-toolbox"
         - "QQMusic"
-      btn_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
+        - "RadeonSoftware"
+        - "AcPowerNotification"
+        - "HipsTray"
+        - "PopBlock"
+        - "SecurityHealthSystray"
 
   # hardwware
   cpu:
