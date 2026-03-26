@@ -53,6 +53,7 @@ bars:
       - "glazewm_workspaces"
       # - "systray"
       right:
+      - "systray"
       - "media"
       - "cava"
       # - "weather"
@@ -171,6 +172,40 @@ widgets:
         processes: []
         titles: []
         classes: []
+  systray:
+    type: "yasb.systray.SystrayWidget"
+    options:
+      class_name: "systray"
+      label_collapsed: "▼"
+      label_expanded: "▶"
+      label_position: "left" # Can be "left" or "right"
+      icon_size: 16 # Can be any integer between 8 and 64
+      pin_click_modifier: "alt" # Can be "ctrl", "alt" or "shift"
+      show_unpinned: true
+      show_unpinned_button: true
+      show_battery: false
+      show_volume: false
+      show_network: false
+      hide_icons:
+        - "yasb"
+        - "glazewm"
+        - "TranslucentTB"
+        - "wallpaper64"
+        - "msrdc"
+        - "steam"
+        - "PowerToys"
+        - "Docker Desktop"
+        - "ExplorerTabUtility"
+        - "Everything"
+        - "PixPin"
+        - "openvpn-gui"
+        - "jetbrains-toolbox"
+        - "QQMusic"
+      btn_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
 
   # hardwware
   cpu:
@@ -374,26 +409,5 @@ widgets:
       hide_empty: true
       callbacks:
         on_left: 'reload_cava'
-
-  # additional
-  systray:
-    type: "yasb.systray.SystrayWidget"
-    options:
-      class_name: "systray"
-      label_collapsed: "▼"
-      label_expanded: "▶"
-      label_position: "left" # Can be "left" or "right"
-      icon_size: 16 # Can be any integer between 8 and 64
-      pin_click_modifier: "alt" # Can be "ctrl", "alt" or "shift"
-      show_unpinned: true
-      show_unpinned_button: true
-      show_battery: false
-      show_volume: false
-      show_network: false
-      btn_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   
           

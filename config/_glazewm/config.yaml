@@ -216,6 +216,8 @@ window_rules:
         window_title: { equals: '打开' }
       - window_process: { equals: 'yasb_themes' }
         window_title: { equals: 'Install Theme' }
+      - window_process: { equals: 'yasb' }
+        window_class: { equals: 'Qt6102QWindowIcon' }
   # 忽略(对一些特殊窗口进行忽略) ======================================
   - commands: ['ignore']
     match:
@@ -361,7 +363,7 @@ keybindings:
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
   - commands: ['shell-exec wt']
-    bindings: ['alt+p']
+    bindings: ['alt+q']
 
   # Focus the next/previous active workspace defined in `workspaces` config.
   - commands: ['focus --next-active-workspace']
