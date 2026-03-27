@@ -265,6 +265,7 @@ window_rules:
         window_title: { not_regex: '飞书' }
       - window_process: { equals: 'explorer' }
         window_class: { equals: 'Xaml_WindowedPopupClass' }
+      - window_process: { equals: 'XIVLauncherCN' }
 
 
 binding_modes:
