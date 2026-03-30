@@ -97,7 +97,7 @@ window_effects:
       enabled: false
       style: 'rounded'
     transparency:
-      enabled: true
+      enabled: false
       opacity: '90%'
 
 window_behavior:
@@ -169,6 +169,7 @@ window_rules:
     match:
       - window_process: { equals: 'rider64' }
       - window_process: { equals: 'webstorm64' }
+      - window_process: { equals: 'Unity Hub' }
   # Code 3
   - commands: ['move --workspace 4', 'focus --workspace 4']
     match:
@@ -225,6 +226,7 @@ window_rules:
       - window_process: { equals: 'yasb' }
         window_class: { equals: 'Qt6102QWindowIcon' }
       - window_process: { equals: 'prettyZoo' }
+      - window_process: { equals: 'Unity Hub' }
   # 忽略(对一些特殊窗口进行忽略) ======================================
   - commands: ['ignore']
     match:
@@ -260,12 +262,16 @@ window_rules:
       - window_process: { equals: 'jetbrains-toolbox' }
       - window_process: { equals: 'AutoHotkeyUX' }
       - window_process: { equals: 'QQMusic' }
-      - window_process: { equals: 'Unity' }
+      # - window_process: { equals: 'Unity' }
       - window_process: { equals: 'Feishu' }
         window_title: { not_regex: '飞书' }
       - window_process: { equals: 'explorer' }
         window_class: { equals: 'Xaml_WindowedPopupClass' }
       - window_process: { equals: 'XIVLauncherCN' }
+
+      # Ignore Unity apps.
+      - window_process: { equals: 'Unity' }
+        window_class: { equals: 'UnitySplashWindow' }
 
 
 binding_modes:

@@ -53,7 +53,7 @@ bars:
       - "glazewm_workspaces"
       # - "systray"
       right:
-      - "systray"
+      # - "systray"
       - "cava"
       - "media"
       # - "weather"
